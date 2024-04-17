@@ -37,14 +37,14 @@ const LinkedInOAuth = () => {
         );
     };
 
-    const handleLinkedInCallback = () => {
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const code = urlParams.get('code');
-        if (code) handleLogin(code);
-    };
 
     useEffect(() => {
+        const handleLinkedInCallback = () => {
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const code = urlParams.get('code');
+            if (code) handleLogin(code);
+        };
         handleLinkedInCallback();
     }, []);
 
