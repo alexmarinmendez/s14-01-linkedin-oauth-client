@@ -9,6 +9,7 @@ const LinkedInOAuth = () => {
     const handleLogin = async (code) => {
         // Exchange the code for an access token
         const data = await fetch('https://www.linkedin.com/oauth/v2/accessToken', {
+            mode: "no-cors",
             method: 'POST',
             body: new URLSearchParams({
                 grant_type: 'authorization_code',
